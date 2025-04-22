@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Event from "./pages/Events";
 import About from "./pages/About";
-import React from "react";
 import SearchBar from "./Components/SearchBar";
 import PastEvents from "./Components/PastEvents";
 import NewEvents from "./Components/NewEvents";
