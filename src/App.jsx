@@ -19,16 +19,24 @@ function App() {
       <div className="Container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Event />} />
+          <Route
+            path="/events"
+            element={
+              <>
+                <div className="App">
+                  <h1>Event Finder</h1>
+                  <SearchBar
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                  />
+                  <NewEvents />
+                  <PastEvents />
+                </div>
+              </>
+            }
+          />
           <Route path="/about" element={<About />} />
         </Routes>
-      </div>
-
-      <div className="App">
-        <h1>Event Finder</h1>
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <NewEvents />
-        <PastEvents />
       </div>
     </>
   );
