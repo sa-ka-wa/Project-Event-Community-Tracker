@@ -8,29 +8,22 @@ import About from "./pages/About";
 import SearchBar from "./Components/SearchBar";
 import PastEvents from "./Components/PastEvents";
 import NewEvents from "./Components/NewEvents";
+
 import "./App.css";
 
 function App() {
+
+  
+
   const [searchTerm, setSearchTerm] = React.useState("");
 
   return (
-    <>
-      <Navbar />
-      <div className="Container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Event />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-
-      <div className="App">
-        <h1>Event Finder</h1>
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <NewEvents />
-        <PastEvents />
-      </div>
-    </>
+    <div className="App">
+      <h1>Event Finder</h1>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <NewEvents />
+      <PastEvents />
+    </div>
   );
 }
 
