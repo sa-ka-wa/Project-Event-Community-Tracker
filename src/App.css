@@ -38,3 +38,149 @@ h1 {
   line-height: 1.5;
 }
 
+/* Styles for the Calendar */
+.calendar {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.calendar-cell {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-cell:hover {
+  background-color: #f0f8ff;
+  border-color: #4a90e2;
+}
+
+.calendar-cell.selected {
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.calendar-cell.empty {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+}
+
+.events {
+  margin-top: 20px;
+}
+
+.events h3 {
+  color: #4a90e2;
+}
+
+.events ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.events li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* Styles for the Calendar Component */
+.calendar {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar h2 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.calendar-cell {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-cell.header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+.calendar-cell.empty {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+}
+
+.calendar-cell.selected {
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.calendar-cell.has-events {
+  background-color: #e6f7ff;
+  border-color: #4a90e2;
+}
+
+.calendar-cell:hover {
+  background-color: #f0f8ff;
+  border-color: #4a90e2;
+}
+
+.events {
+  margin-top: 20px;
+}
+
+.events h3 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.events ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.events li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}

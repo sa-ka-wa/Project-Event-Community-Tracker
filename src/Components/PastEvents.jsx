@@ -1,11 +1,22 @@
-import React from 'react';
+import React from "react";
 
-function PastEvents() {
+function PastEvents({ events }) {
   return (
-    <div>
-      <h1>Past Events</h1>
-      <p>Details about past events will be displayed here.</p>
+    <div className="past-events">
+      <h2>Past Events</h2>
+      {events.length > 0 ? (
+        <ul>
+          {events.map((event, index) => (
+            <li key={index}>
+              <strong>{event.title}</strong> - {event.date}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No past events.</p>
+      )}
     </div>
   );
-}   
-export default PastEvents;  
+}
+
+export default PastEvents;
