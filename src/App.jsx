@@ -27,22 +27,35 @@ function App() {
   const pastEvents = filteredEvents.filter((event) => event.date < today);
   const newEvents = filteredEvents.filter((event) => event.date >= today);
 
+
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={
-          <>
-            <NewEvents events={newEvents} />
-            <PastEvents events={pastEvents} />
-            <Calendar events={filteredEvents} />
-          </>
-        } />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </div>
+      <div className="Container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/events"
+            element={
+              <>
+                <div className="App">
+                  <h1>Event Finder</h1>
+                  <SearchBar
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                  />
+                  <NewEvents />
+                  <PastEvents events={pastEvents} />
+                  <Calendar events={filteredEvents} />
+                </div>
+              </>
+            }
+          />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </>
+
   );
 }
 
