@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "Luo Market Day",
+      "date": "2024-12-15T19:00:00",
+      "location": "Muhuri Grounds",
+      "description": "Accessing luo cultural items",
+      "category": "Culture"
+    },
+    {
+      "id": 2,
+      "title": "Neighborhood Clean-Up ",
+      "date": "2025-04-29T09:00:00",
+      "location": "Valley view park",
+      "description": "Volunteers gathered to clean up our shared community spaces.",
+      "category": "Community"
+    },
+    {
+      "id": 3,
+      "title": "Tech for Teens Workshop",
+      "date": "2025-02-02T14:00:00",
+      "location": "Library",
+      "description": "Intro to coding and robotics for young learners.",
+      "category": "Education"
+    },
+    {
+      "id": 4,
+      "title": "Feed the next",
+      "date": "2025-03-05T11:00:00",
+      "location": "PCEA main entrance",
+      "description": "Bring a dish, take a dish — share the love.",
+      "category": "Culture"
+    }
+  ]
+  
