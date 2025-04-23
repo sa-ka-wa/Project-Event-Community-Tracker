@@ -8,10 +8,25 @@ import About from "./pages/About";
 import SearchBar from "./Components/SearchBar";
 import PastEvents from "./Components/PastEvents";
 import NewEvents from "./Components/NewEvents";
-import "./App.css";
+import Calendar from "./Components/Calendar";
 
 function App() {
+  const events = [
+    { title: "Event 1", date: "2025-04-22" },
+    { title: "Event 2", date: "2025-04-23" },
+    { title: "Event 3", date: "2025-04-25" },
+  ];
+
   const [searchTerm, setSearchTerm] = React.useState("");
+
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const today = new Date().toISOString().split("T")[0];
+  const pastEvents = filteredEvents.filter((event) => event.date < today);
+  const newEvents = filteredEvents.filter((event) => event.date >= today);
+
 
   return (
     <>
@@ -30,7 +45,8 @@ function App() {
                     setSearchTerm={setSearchTerm}
                   />
                   <NewEvents />
-                  <PastEvents />
+                  <PastEvents events={pastEvents} />
+                  <Calendar events={filteredEvents} />
                 </div>
               </>
             }
@@ -39,6 +55,7 @@ function App() {
         </Routes>
       </div>
     </>
+
   );
 }
 
