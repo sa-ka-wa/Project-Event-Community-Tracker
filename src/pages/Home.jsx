@@ -1,17 +1,9 @@
 import React from "react";
+import AuthFormToggle from "../logins/FormToggle";
 import { useAuth } from "../logins/AuthContext";
 
 const Home = () => {
   const { currentUser, login, logout, isAuthenticated } = useAuth();
-
-  const handleLogin = async () => {
-    const result = await login("demo@example.com", "password123");
-    if (result.success) {
-      alert("Logged in successfully!");
-    } else {
-      alert(result.message);
-    }
-  };
 
   return (
     <div>
@@ -24,7 +16,7 @@ const Home = () => {
       ) : (
         <>
           <p>Please log in to see your events.</p>
-          <button onClick={handleLogin}>Login</button>
+          <AuthFormToggle />
         </>
       )}
     </div>

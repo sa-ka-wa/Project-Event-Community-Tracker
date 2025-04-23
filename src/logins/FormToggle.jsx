@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import Login from './Login';
-import Register from './Register';
-import { useAuth } from './AuthContext';
+import { useState } from "react";
+import Login from "./Login";
+import Register from "./Register";
+import { useAuth } from "./AuthContext";
 
 const AuthFormToggle = () => {
   const [showLogin, setShowLogin] = useState(true);
