@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function Calendar({ events }) {
   const [selectedDate, setSelectedDate] = useState(null);
+  const [currentDate, setCurrentDate] = useState(new Date());
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
 
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -21,10 +21,35 @@ function Calendar({ events }) {
     (event) => event.date === formattedSelectedDate
   );
 
+  // Change the month
+  const changeMonth = (direction) => {
+    const newDate = new Date(currentDate);
+    newDate.setMonth(currentDate.getMonth() + direction);
+    setCurrentDate(newDate);
+  };
+
+  // Change the year
+  const changeYear = (direction) => {
+    const newDate = new Date(currentDate);
+    newDate.setFullYear(currentDate.getFullYear() + direction);
+    setCurrentDate(newDate);
+  };
+
   // 🛠️ Move the return inside the function body, not after a closing brace
   return (
     <div className="calendar">
       <h2>Calendar</h2>
+
+      {/* Calendar Navigation */}
+      <div className="calendar-navigation">
+        <button onClick={() => changeYear(-1)}>&lt;&lt; Prev Year</button>
+        <button onClick={() => changeMonth(-1)}>&lt; Prev Month</button>
+        <span>
+          {currentDate.toLocaleDateString("en-US", { year: "numeric", month: "long" })}
+        </span>
+        <button onClick={() => changeMonth(1)}>Next Month &gt;</button>
+        <button onClick={() => changeYear(1)}>Next Year &gt;&gt;</button>
+      </div>
 
       {/* Weekday headers */}
       <div className="calendar-grid">
