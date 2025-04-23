@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
@@ -11,13 +11,17 @@ import NewEvents from "./Components/NewEvents";
 import Calendar from "./Components/Calendar";
 
 function App() {
-  const events = [
-    { title: "Event 1", date: "2025-04-22" },
-    { title: "Event 2", date: "2025-04-23" },
-    { title: "Event 3", date: "2025-04-25" },
-  ];
+  const [events, setEvents] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const response = await fetch("http://localhost:3000/events");
+      const data = await response.json();
+      setEvents(data);
+    };
 
-  const [searchTerm, setSearchTerm] = React.useState("");
+    fetchEvents();
+  }, []);
 
   const filteredEvents = events.filter((event) =>
     event.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -26,7 +30,6 @@ function App() {
   const today = new Date().toISOString().split("T")[0];
   const pastEvents = filteredEvents.filter((event) => event.date < today);
   const newEvents = filteredEvents.filter((event) => event.date >= today);
-
 
   return (
     <>
@@ -55,7 +58,6 @@ function App() {
         </Routes>
       </div>
     </>
-
   );
 }
 
