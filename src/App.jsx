@@ -44,7 +44,7 @@ function App() {
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
                   />
-                  <NewEvents />
+                  <NewEvents events={newEvents} />
                   <PastEvents events={pastEvents} />
                   <Calendar events={filteredEvents} />
                 </div>
