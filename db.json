@@ -96,8 +96,8 @@
     },
     {
       "id": "083a",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Moringa Graduation",
+      "date": "2025-11-12T23:28"
     },
     {
       "id": "5079",
@@ -106,7 +106,7 @@
     },
     {
       "id": "59a6",
-      "title": "summer",
+      "title": "winter",
       "date": "2025-04-30T23:28"
     },
     {
@@ -118,6 +118,11 @@
       "id": "5aa5",
       "title": "summer",
       "date": "2025-04-30T23:28"
+    },
+    {
+      "id": "687d",
+      "title": "Masinga TT",
+      "date": "2025-05-15T09:50"
     }
   ]
 }
