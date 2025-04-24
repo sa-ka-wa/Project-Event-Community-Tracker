@@ -9,6 +9,7 @@ import SearchBar from "./Components/SearchBar";
 import PastEvents from "./Components/PastEvents";
 import NewEvents from "./Components/NewEvents";
 import Calendar from "./Components/Calendar";
+import ErrorBoundary from "./ADEbuttons/Error.jsx";
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -48,7 +49,9 @@ function App() {
                     setSearchTerm={setSearchTerm}
                   />
                   <NewEvents events={newEvents} />
-                  <PastEvents events={pastEvents} />
+                  <ErrorBoundary>
+                    <PastEvents initialEvents={events} setEvents={setEvents} />
+                  </ErrorBoundary>
                   <Calendar events={filteredEvents} />
                 </div>
               </>
