@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from "react";
 
 export const AuthContext = createContext();
 
@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   // Check if user is already logged in (from localStorage)
   useEffect(() => {
-    const storedUser = localStorage.getItem('eventEaseUser');
+    const storedUser = localStorage.getItem("eventEaseUser");
     if (storedUser) {
       setCurrentUser(JSON.parse(storedUser));
     }
@@ -23,14 +23,14 @@ export const AuthProvider = ({ children }) => {
     // Simplified login for demo
     // In a real app, you'd verify against your json-server
     try {
-      const user = { id: 1, name: "Demo User", email: email }; 
-      localStorage.setItem('eventEaseUser', JSON.stringify(user));
+      const user = { id: 1, name: "Demo User", email: email };
+      localStorage.setItem("eventEaseUser", JSON.stringify(user));
       setCurrentUser(user);
       return { success: true };
     } catch (error) {
-      return { 
-        success: false, 
-        message: 'Login failed. Please try again.'
+      return {
+        success: false,
+        message: "Login failed. Please try again.",
       };
     }
   };
@@ -39,19 +39,19 @@ export const AuthProvider = ({ children }) => {
     // Simplified registration for demo
     try {
       const user = { id: Date.now(), name, email };
-      localStorage.setItem('eventEaseUser', JSON.stringify(user));
+      localStorage.setItem("eventEaseUser", JSON.stringify(user));
       setCurrentUser(user);
       return { success: true };
     } catch (error) {
       return {
         success: false,
-        message: 'Registration failed. Please try again.'
+        message: "Registration failed. Please try again.",
       };
     }
   };
 
   const logout = () => {
-    localStorage.removeItem('eventEaseUser');
+    localStorage.removeItem("eventEaseUser");
     setCurrentUser(null);
   };
 
