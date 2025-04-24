@@ -1,10 +1,11 @@
 /* General styles for the app */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  margin-top: 80px;
 }
 
 .App {
@@ -187,4 +188,11 @@ h1 {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+}
+.main-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* adjust if there's a fixed navbar */
+  padding-top: 80px; /* if you want spacing below navbar */
 }
