@@ -40,51 +40,55 @@ h1 {
 
 /* Styles for the Calendar */
 .calendar {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-navigation {
+  margin: 10px 0;
+}
+
+.calendar-navigation button {
+  margin: 0 5px;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 .calendar-cell {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  text-align: center;
   cursor: pointer;
 }
 
-.calendar-cell:hover {
-  background-color: #f0f8ff;
-  border-color: #4a90e2;
-}
-
-.calendar-cell.selected {
-  background-color: #4a90e2;
-  color: #fff;
+.calendar-cell.header {
   font-weight: bold;
 }
 
 .calendar-cell.empty {
-  background-color: transparent;
-  border: none;
-  cursor: default;
+  background-color: #f0f0f0;
+}
+
+.calendar-cell.selected {
+  background-color: #a1c4fd;
+}
+
+.calendar-cell.has-events {
+  background-color: #ffd700;
 }
 
 .events {
   margin-top: 20px;
+  text-align: center;
 }
+
 
 .events h3 {
   color: #4a90e2;
