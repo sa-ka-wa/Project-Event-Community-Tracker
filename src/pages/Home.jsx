@@ -2,6 +2,9 @@ import React from "react";
 import AuthFormToggle from "../logins/FormToggle";
 import { useAuth } from "../logins/AuthContext";
 import "./Home.css"; // You'll add your styling here
+import appleLogo from "/apple-logo.svg";
+import googleLogo from "/google-plus.svg";
+import microsoftLogo from "/microsoft-logo.svg";
 
 const Home = () => {
   const { currentUser, logout, isAuthenticated } = useAuth();
@@ -23,11 +26,12 @@ const Home = () => {
 
             <AuthFormToggle />
 
-            <div className="social-login">
-              <button><img src="/google-icon.svg" alt="Google" /></button>
-              <button><img src="/microsoft-icon.svg" alt="Microsoft" /></button>
-              <button><img src="/apple-icon.svg" alt="Apple" /></button>
-            </div>
+          <div className="social-login">
+              <button><img src={googleLogo} alt="Google" /></button>
+              <button><img src={microsoftLogo} alt="Microsoft" /></button>
+              <button><img src={appleLogo} alt="Apple" /></button>
+          </div>
+
           </div>
 
           {/* Right side: Image */}
