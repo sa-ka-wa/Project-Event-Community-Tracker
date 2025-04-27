@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventItem from "../ADEbuttons/Evenitems";
 import { editEvent, deleteEvent } from "../utils/eventService";
+import "../ADEbuttons/Eventitems.css";
 
 function PastEvents({ initialEvents, setEvents }) {
   const [events, setLocalEvents] = useState(initialEvents);

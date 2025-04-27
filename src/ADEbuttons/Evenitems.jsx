@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { editEvent, deleteEvent } from "../utils/eventService.js";
 import "./Eventitems.css";
 
-function EventItem({ event, onDeleteEvent, onEditEvent }) {
+function EventItem({ event, onDeleteEvent, onEditEvent, onSelectEvent }) {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedEvent, setUpdatedEvent] = useState(event);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -39,11 +39,17 @@ function EventItem({ event, onDeleteEvent, onEditEvent }) {
   };
 
   const hasImage = event.imageUrl && event.imageUrl.trim() !== "";
-
+  const handleEventClick = () => {
+    onSelectEvent(event);
+  };
   return (
-    <div>
+    <div className="event-item" onClick={handleEventClick}>
       {isEditing ? (
-        <form onSubmit={handleSubmitEdit} className="event-form">
+        <form
+          onSubmit={handleSubmitEdit}
+          onClick={handleEventClick}
+          className="event-form"
+        >
           <input
             type="text"
             name="title"
