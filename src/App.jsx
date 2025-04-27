@@ -16,6 +16,7 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchEvents = async () => {
       const response = await fetch("http://localhost:3000/events");
@@ -33,18 +34,18 @@ function App() {
   const today = new Date().toISOString().split("T")[0];
   const pastEvents = filteredEvents.filter((event) => event.date < today);
   const newEvents = filteredEvents.filter((event) => event.date >= today);
+
   const handleEventSelect = (event) => {
-    setSelectedEvent(event); 
+    setSelectedEvent(event); // Update selectedEvent state when event is clicked
   };
+
   const handleScroll = () => {
-    
-    const eventElements = document.querySelectorAll(".event-item"); 
+    const eventElements = document.querySelectorAll(".event-item");
 
     eventElements.forEach((element) => {
       const rect = element.getBoundingClientRect();
       if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        
-        const eventId = element.getAttribute("data-id"); 
+        const eventId = element.getAttribute("data-id");
         const event = events.find((event) => event.id === parseInt(eventId));
         setSelectedEvent(event);
       }
@@ -52,9 +53,9 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); 
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll); 
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [events]);
 
@@ -70,24 +71,21 @@ function App() {
               <>
                 <div className="App">
                   <h1>Event Finder</h1>
-                  <SearchBar
-                    searchTerm={searchTerm}
-                    setSearchTerm={setSearchTerm}
-                  />
+                  <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                   <div className="events-container">
                     <div className="events-list">
                       <ErrorBoundary>
                         <NewEvents
                           events={newEvents}
                           setEvents={setEvents}
-                          handleEventSelect={handleEventSelect}
+                          handleEventSelect={handleEventSelect} // Pass the handler for new events
                         />
                       </ErrorBoundary>
                       <ErrorBoundary>
                         <PastEvents
-                          initialEvents={events}
+                          events={pastEvents}
                           setEvents={setEvents}
-                          handleEventSelect={handleEventSelect}
+                          handleEventSelect={handleEventSelect} // Pass the handler for past events
                         />
                       </ErrorBoundary>
                     </div>
@@ -98,8 +96,6 @@ function App() {
                             <h2>{selectedEvent.title}</h2>
                             <p>{selectedEvent.description}</p>
                             <p>{selectedEvent.date}</p>
-
-                            <p>{selectedEvent.image}</p>
 
                             <p>{selectedEvent.location}</p>
                             <p>{selectedEvent.culture}</p>
@@ -117,6 +113,7 @@ function App() {
                                 />
                               )}
                             </div>
+
                           </div>
                         ) : (
                           <div>
@@ -131,7 +128,6 @@ function App() {
                       </div>
                     </div>
                   </div>
-
                   <Calendar events={filteredEvents} />
                 </div>
               </>
