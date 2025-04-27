@@ -5,110 +5,97 @@
       "title": "Luo Market Day",
       "date": "2024-12-15T19:00:00",
       "location": "Muhuri Grounds",
-      "description": "Accessing luo cultural items",
-      "category": "Culture"
+      "description": "Experience authentic Luo culture through arts, crafts, and traditional food.",
+      "category": "Culture",
+      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
     },
     {
       "id": "2",
-      "title": "Neighborhood Clean-Up ",
-      "date": "2025-04-04T09:00",
-      "location": "Valley view park",
-      "description": "Volunteers gathered to clean up our shared community spaces.",
-      "category": "Community"
+      "title": "Neighborhood Clean-Up",
+      "date": "2025-04-04T09:00:00",
+      "location": "Valley View Park",
+      "description": "Join us to clean and beautify our community spaces. All are welcome!",
+      "category": "Community",
+      "image": "https://images.unsplash.com/photo-1588776814546-1acb9cc21962"
     },
     {
       "id": "3",
       "title": "Tech for Teens Workshop",
       "date": "2025-02-02T14:00:00",
       "location": "Library",
-      "description": "Intro to coding and robotics for young learners.",
-      "category": "Education"
+      "description": "An introductory workshop on coding, robotics, and STEM careers for teenagers.",
+      "category": "Education",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
     },
     {
       "id": "4",
-      "title": "Feed the next",
+      "title": "Feed the Next",
       "date": "2025-03-05T11:00:00",
-      "location": "PCEA main entrance",
-      "description": "Bring a dish, take a dish — share the love.",
-      "category": "Culture"
+      "location": "PCEA Main Entrance",
+      "description": "A community potluck event — bring a dish and share the love!",
+      "category": "Culture",
+      "image": "https://images.unsplash.com/photo-1532634896-26909d0d4b9a"
+    },
+    {
+      "id": "5",
+      "title": "Youth Leadership Summit",
+      "date": "2025-08-15T09:30:00",
+      "location": "Conference Center",
+      "description": "Develop your leadership skills through workshops and keynote speeches.",
+      "category": "Leadership",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+    },
+    {
+      "id": "6",
+      "title": "Moringa Graduation Ceremony",
+      "date": "2025-11-12T10:00:00",
+      "location": "Moringa School Hall",
+      "description": "Celebrating the achievements of our latest cohort of tech talents!",
+      "category": "Education",
+      "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+    },
+    {
+      "id": "7",
+      "title": "Beach Clean Up - Tides Project",
+      "date": "2025-04-11T08:00:00",
+      "location": "Diani Beach",
+      "description": "Help restore our beaches — volunteer for the Tides Project.",
+      "category": "Environment",
+      "image": "https://images.unsplash.com/photo-1564162003384-dfbd0b9a0000"
     },
     {
       "id": "8",
-      "title": "Youth Leadership ",
-      "date": "2025-08-15T09:30:00",
-      "location": "Conference Center",
-      "description": "Workshops and networking.",
-      "category": "Leadership"
+      "title": "Summer Festival",
+      "date": "2025-04-30T15:00:00",
+      "location": "Sunset Park",
+      "description": "Music, food, games, and fun! Celebrate summer with your community.",
+      "category": "Festival",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
     },
     {
-      "id": "0c8c",
-      "title": "",
-      "date": ""
+      "id": "9",
+      "title": "Winter Charity Gala",
+      "date": "2025-12-10T18:00:00",
+      "location": "Grand Ballroom",
+      "description": "An elegant evening to support local charities and nonprofits.",
+      "category": "Charity",
+      "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4"
     },
     {
-      "id": "81b1",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
-    },
+      "id": "10",
+      "title": "Masinga TT Cycling",
+      "date": "2025-05-15T07:30:00",
+      "location": "Masinga Dam Area",
+      "description": "Challenge yourself in this thrilling time-trial cycling competition.",
+      "category": "Sports",
+      "image": "https://images.unsplash.com/photo-1520975911184-6f1b777b7843"
+    }
+  ],
+  "users": [
     {
-      "id": "c215",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
-    },
-    {
-      "id": "6ccb",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
-    },
-    {
-      "id": "b427",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "c38e",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "083a",
-      "title": "Moringa Graduation",
-      "date": "2025-11-12T23:28"
-    },
-    {
-      "id": "5079",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "59a6",
-      "title": "winter",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "7668",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "5aa5",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
-    },
-    {
-      "id": "687d",
-      "title": "Masinga TT",
-      "date": "2025-05-15T09:50"
-    },
-    {
-      "id": "00aa",
-      "title": "",
-      "date": ""
-    },
-    {
-      "id": "ff91",
-      "title": "",
-      "date": ""
+      "id": "1",
+      "name": "John Doe",
+      "email": ""
     }
   ]
 }
