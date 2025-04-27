@@ -1,8 +1,9 @@
 import React from "react";
 import AddEvent from "../ADEbuttons/Addevent";
 import EventItem from "../ADEbuttons/Evenitems";
+import "../ADEbuttons/Eventitems.css";
 
-function NewEvents({ events, setEvents }) {
+function NewEvents({ events, setEvents, handleEventSelect }) {
   const today = new Date().toISOString().split("T")[0];
   const upcomingEvents = events.filter((event) => event.date >= today);
 
@@ -27,7 +28,7 @@ function NewEvents({ events, setEvents }) {
       {events.length > 0 ? (
         <ul>
           {upcomingEvents.map((event) => (
-            <li key={event.id}>
+            <li key={event.id} onClick={() => handleEventSelect(event)}>
               <EventItem
                 event={event}
                 onDeleteEvent={handleDeleteEvent}

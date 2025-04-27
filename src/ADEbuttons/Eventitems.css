@@ -19,7 +19,7 @@ body {
   padding: 30px;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 800px;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
   color: #fff;
@@ -195,4 +195,155 @@ body {
   border-radius: 12px;
   margin-bottom: 10px;
   font-size: 18px;
+}
+.new-events {
+  width: 40vw;
+  max-width: none;
+  margin: 0;
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 30px 40px; /* 30px top/bottom, 40px left/right */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align everything to the left */
+}
+.add-event {
+  background-color: #111;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  padding: 30px 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: 0; /* Align left */
+  color: #fff;
+}
+
+.add-event h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: left; /* Title also aligned left */
+}
+
+.add-event form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* stay left */
+}
+
+.add-event label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #aaa;
+  min-width: 150px;
+}
+
+.add-event input {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #222;
+  color: #eee;
+  transition: border-color 0.3s;
+}
+
+.add-event input:focus {
+  border-color: #555;
+  outline: none;
+}
+
+.add-event button {
+  padding: 10px 20px;
+  background-color: #f08ca1;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.add-event button:hover {
+  background-color: #e07a91;
+}
+
+/* Responsive tweak for small screens */
+@media (max-width: 768px) {
+  .add-event form {
+    flex-direction: column;
+    align-items: flex-start; /* Still left-aligned on mobile */
+  }
+
+  .add-event button {
+    width: 100%;
+  }
+}
+.past-events {
+  width: 40vw;
+  max-width: none;
+  margin: 0;
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 30px 40px; /* 30px top/bottom, 40px left/right */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align everything to the left */
+}
+.add-event {
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 20px 30px; /* smaller padding to make it thinner */
+  margin-bottom: 30px;
+  width: 60vh; /* same width as new-events and past-events */
+  max-width: none; /* remove max-width limit */
+  margin: 0; /* no side margin */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align everything to the left */
+}
+.events-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the components within this section */
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the components within this section */
+
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 30px 40px;
+  color: #fff;
+  width: 50vw; /* Same width as new-events and past-events */
+  max-width: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
