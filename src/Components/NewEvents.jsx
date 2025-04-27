@@ -25,7 +25,7 @@ function NewEvents({ events, setEvents, handleEventSelect }) {
     <div className="new-events">
       <h2>New Events</h2>
       <AddEvent onAddEvent={handleAddEvent} />
-      {events.length > 0 ? (
+      {upcomingEvents.length > 0 ? (
         <ul>
           {upcomingEvents.map((event) => (
             <li key={event.id} onClick={() => handleEventSelect(event)}>
@@ -34,6 +34,14 @@ function NewEvents({ events, setEvents, handleEventSelect }) {
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
+              {/* Render image for each event */}
+              {event.image && (
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  style={{ width: "150px", height: "auto", marginTop: "10px" }}
+                />
+              )}
             </li>
           ))}
         </ul>
