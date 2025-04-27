@@ -6,7 +6,8 @@
       "date": "2024-12-15T19:00:00",
       "location": "Muhuri Grounds",
       "description": "Accessing luo cultural items",
-      "category": "Culture"
+      "category": "Culture",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFeZI_K1LlC6OeAIdpTIzCxZhXrzBNJqBFOw&s"
     },
     {
       "id": "2",
@@ -14,101 +15,152 @@
       "date": "2025-04-04T09:00",
       "location": "Valley view park",
       "description": "Volunteers gathered to clean up our shared community spaces.",
-      "category": "Community"
+      "category": "Community",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPE3lfqrykmOk1h5EIvklqGIQl24RHRrrOQQ&s"
     },
     {
       "id": "3",
       "title": "Tech for Teens Workshop",
-      "date": "2025-02-02T14:00:00",
+      "date": "2025-08-02T14:00:00",
       "location": "Library",
       "description": "Intro to coding and robotics for young learners.",
-      "category": "Education"
+      "category": "Education",
+     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMmaq9n8d0Temzh5wzWEOJdyIDdMobcID-w&s"
     },
     {
       "id": "4",
       "title": "Feed the next",
-      "date": "2025-03-05T11:00:00",
+      "date": "2025-04-05T11:00:00",
       "location": "PCEA main entrance",
       "description": "Bring a dish, take a dish — share the love.",
-      "category": "Culture"
+      "category": "Culture",
+       "image": "https://i.pinimg.com/736x/86/f9/d5/86f9d572dc3e204cb0c98fb53e82128f.jpg"
     },
     {
       "id": "8",
       "title": "Youth Leadership ",
-      "date": "2025-08-15T09:30:00",
+      "date": "2025-03-15T09:30:00",
       "location": "Conference Center",
       "description": "Workshops and networking.",
-      "category": "Leadership"
+      "category": "Leadership",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAEfpshaXasQ01XWZjcmr1a65GLZS9Pah8rw&s"
     },
     {
       "id": "0c8c",
-      "title": "",
-      "date": ""
+      "title": "Musik Event",
+      "date": "2025-01-11T23:27",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://img.freepik.com/free-vector/music-event-poster-template-with-abstract-shapes_1361-1316.jpg"
     },
     {
       "id": "81b1",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
+      "title": "Annual Meetups",
+      "date": "2025-07-11T23:27",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://market-resized.envatousercontent.com/previews/files/425518613/Image+Preview.jpg?w=590&h=590&cf_fit=crop&crop=top&format=auto&q=85&s=ba5a667e0a7e8bccefff5c8f9c63478f21c3057a325a65886c95e34f96a07ce3"
     },
     {
       "id": "c215",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
+      "title": "Digital Awareness",
+      "date": "2025-05-11T23:27",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCDFW1UqdkiU1E0nKYeUnGCSDUEy8Cgkocg&s"
     },
     {
       "id": "6ccb",
-      "title": "tides",
-      "date": "2025-04-11T23:27"
+      "title": "Party in the Park",
+      "date": "2025-06-11T23:27",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://media.gettyimages.com/id/1392404074/vector/party-in-the-park-poster.jpg?s=612x612&w=gi&k=20&c=hOAzXducb4G8xakBthzsIVTx_YLEbtYy_9wliah1G84="
     },
     {
       "id": "b427",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Volunteer Day",
+      "date": "2025-07-30T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSaJDs65NZh670C9K9U4uNhE9tleKVogcjIA&s"
     },
     {
       "id": "c38e",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Design Exhibition",
+      "date": "2025-04-9T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://reallygooddesigns.com/wp-content/uploads/2020/01/Design-Exhibition-Poster.jpg"
     },
     {
       "id": "083a",
-      "title": "Moringa Graduation",
-      "date": "2025-11-12T23:28"
+      "title": "Karaoke Night",
+      "date": "2025-11-12T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZRvr1ttr1Rg7PQqakkpF-Z0pH5KcC_Z7Yrw&s"
     },
     {
       "id": "5079",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Color Festival",
+      "date": "2025-04-7T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://ffflyer.com/wp-content/uploads/2019/07/Festival-of-Color-Event-Flyer-Template-FFFlyer-com.jpg"
     },
     {
       "id": "59a6",
-      "title": "winter",
-      "date": "2025-04-30T23:28"
+      "title": "Photography Exhibition",
+      "date": "2025-04-3T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photography-poster-design-template-8893d557c51cf600d8a5bbc45e5e2028_screen.jpg?ts=1738758014"
     },
     {
       "id": "7668",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Afro beats Festival",
+      "date": "2025-04-30T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://www.eventbookings.com/wp-content/uploads/2023/06/Afrobeats-Poster-1.jpg"
     },
     {
       "id": "5aa5",
-      "title": "summer",
-      "date": "2025-04-30T23:28"
+      "title": "Album Launch",
+      "date": "2025-04-30T23:28",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLowsttbjKsf87r6jrQX6T6pePZfuvF94Q7g&s"
     },
     {
       "id": "687d",
-      "title": "Masinga TT",
-      "date": "2025-05-15T09:50"
+      "title": "African Dance Festival",
+      "date": "2025-05-15T09:50",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://marketplace.canva.com/EAFMXUEXm6c/1/0/566w/canva-blue-futuristic-technology-poster-MoPu-XttWTs.jpg"
     },
     {
       "id": "00aa",
-      "title": "",
-      "date": ""
-    },
-    {
-      "id": "ff91",
-      "title": "",
-      "date": ""
+      "title": " Networking Event",
+      "date": "2025-05-16T09:50",
+      "location": "Conference Center",
+      "description": "Workshops and networking.",
+      "category": "Leadership",
+       "image": "https://cdn.create.microsoft.com/catalog-assets/en-us/0001546d-002f-0000-af65-ef928f8b54ed/thumbnails/600/simple-modern-event-poster-green-simple%252C-photographic%252C-informational-1-59ec49e8ac85.webp"
     }
   ]
 }

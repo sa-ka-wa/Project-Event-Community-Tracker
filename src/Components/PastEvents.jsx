@@ -3,7 +3,7 @@ import EventItem from "../ADEbuttons/Evenitems";
 import { editEvent, deleteEvent } from "../utils/eventService";
 import "../ADEbuttons/Eventitems.css";
 
-function PastEvents({ initialEvents, setEvents }) {
+function PastEvents({ initialEvents, setEvents, handleEventSelect }) {
   const [events, setLocalEvents] = useState(initialEvents);
 
   useEffect(() => {
@@ -25,12 +25,13 @@ function PastEvents({ initialEvents, setEvents }) {
       )
     );
   };
+
   return (
     <div className="past-events">
       <h2>Past Events</h2>
       {events.length > 0 ? (
         <ul>
-          {events.map((event, index) => (
+          {events.map((event) => (
             <li key={event.id}>
               <strong>{event.title}</strong> - {event.date}
               <EventItem
@@ -38,6 +39,14 @@ function PastEvents({ initialEvents, setEvents }) {
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
+              {/* Render image for past events */}
+              {event.image && (
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  style={{ width: "150px", height: "auto", marginTop: "10px" }}
+                />
+              )}
             </li>
           ))}
         </ul>
