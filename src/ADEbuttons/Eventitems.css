@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #f08ca1, #000);
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- General containers --- */
+.add-event,
+.new-events,
+.event-item-container {
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+.new-events {
+  width: 100vw;
+}
+
+/* --- Titles --- */
+.add-event h2,
+.new-events h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* --- Forms --- */
+.add-event form,
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-event input,
+.event-input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #222;
+  color: #eee;
+}
+
+.add-event input::placeholder,
+.event-input::placeholder {
+  color: #aaa;
+}
+
+.add-event button,
+.event-button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-event button:hover,
+.event-button:hover {
+  background-color: #555;
+}
+
+/* --- New Events list --- */
+.new-events ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.new-events li {
+  padding: 15px;
+  background-color: #222;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* --- Event Item --- */
+.event-details {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.event-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.event-buttons button {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  border: 1px solid #555;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-buttons button:hover {
+  background-color: #555;
+}
+
+/* --- Images and placeholders --- */
+.event-image,
+.event-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 18px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.event-image:hover,
+.event-placeholder:hover {
+  transform: scale(1.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .add-event,
+  .new-events,
+  .event-item-container {
+    padding: 20px;
+  }
+
+  .event-image,
+  .event-placeholder {
+    width: 100%;
+    height: 150px;
+  }
+}
+/* --- Scrollable Event Lists --- */
+.new-events ul,
+.past-events ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-height: 50vh; /* limit height */
+  overflow-y: auto; /* enable vertical scrolling */
+  scrollbar-width: thin;
+  scrollbar-color: #555 #111;
+}
+
+.new-events ul::-webkit-scrollbar,
+.past-events ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.new-events ul::-webkit-scrollbar-thumb,
+.past-events ul::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.new-events ul::-webkit-scrollbar-track,
+.past-events ul::-webkit-scrollbar-track {
+  background-color: #111;
+}
+
+/* Individual event list items */
+.new-events li,
+.past-events li {
+  padding: 15px;
+  background-color: #222;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}

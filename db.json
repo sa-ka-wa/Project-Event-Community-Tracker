@@ -33,30 +33,6 @@
       "category": "Culture"
     },
     {
-      "id": "5",
-      "title": "Summer Tides",
-      "date": "2025-06-18T18:00",
-      "location": "Diani",
-      "description": "Live performances.",
-      "category": "Enjoyment"
-    },
-    {
-      "id": "6",
-      "title": "Cook with JJ",
-      "date": "2025-06-10T17:00:00",
-      "location": "Home",
-      "description": "Watch cooking show.",
-      "category": "Leisure"
-    },
-    {
-      "id": "7",
-      "title": "Coding Bootcamp",
-      "date": "2025-07-01T10:00:00",
-      "location": "Lab 2",
-      "description": "Full-day intensive React and Node.js crash course.",
-      "category": "Education"
-    },
-    {
       "id": "8",
       "title": "Youth Leadership ",
       "date": "2025-08-15T09:30:00",
@@ -123,6 +99,11 @@
       "id": "687d",
       "title": "Masinga TT",
       "date": "2025-05-15T09:50"
+    },
+    {
+      "id": "00aa",
+      "title": "",
+      "date": ""
     }
   ]
 }
