@@ -19,8 +19,8 @@ function EventItem({ event, onDeleteEvent, onEditEvent, onSelectEvent }) {
     e.preventDefault();
     try {
       const editedEvent = await editEvent(event.id, updatedEvent);
-      onEditEvent(editedEvent); // Update parent state with the edited event
-      setIsEditing(false); // Close editing mode
+      onEditEvent(editedEvent);
+      setIsEditing(false);
     } catch (err) {
       console.error("Failed to edit event:", err);
     }
@@ -29,7 +29,7 @@ function EventItem({ event, onDeleteEvent, onEditEvent, onSelectEvent }) {
   const handleDelete = async () => {
     try {
       await deleteEvent(event.id);
-      onDeleteEvent(event.id); // Update parent state after deletion
+      onDeleteEvent(event.id);
     } catch (err) {
       console.error("Failed to delete event:", err);
     }
@@ -38,7 +38,7 @@ function EventItem({ event, onDeleteEvent, onEditEvent, onSelectEvent }) {
     setIsExpanded(!isExpanded);
   };
 
-  const hasImage = event.imageUrl && event.imageUrl.trim() !== "";
+  const hasImage = event.image && event.image.trim() !== "";
   const handleEventClick = () => {
     onSelectEvent(event);
   };
@@ -81,7 +81,7 @@ function EventItem({ event, onDeleteEvent, onEditEvent, onSelectEvent }) {
         <>
           {hasImage ? (
             <img
-              src={event.imageUrl}
+              src={event.image}
               alt={event.title}
               onClick={handleImageClick}
               className="event-image"

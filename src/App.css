@@ -39,6 +39,25 @@ h1 {
   line-height: 1.5;
 }
 
+/* Event Details Image */
+.event-image {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+/* Event Details Container */
+.event-details {
+  max-width: 100%;
+  overflow: hidden;
+  text-align: left;
+  padding: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
 /* Styles for the Calendar */
 .calendar {
   display: flex;
@@ -106,88 +125,8 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
 }
-/* Styles for the Calendar Component */
-.calendar {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.calendar h2 {
-  color: #4a90e2;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-top: 20px;
-}
-
-.calendar-cell {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.calendar-cell.header {
-  font-weight: bold;
-  background-color: #f0f0f0;
-  border: none;
-}
-
-.calendar-cell.empty {
-  background-color: transparent;
-  border: none;
-  cursor: default;
-}
-
-.calendar-cell.selected {
-  background-color: #4a90e2;
-  color: #fff;
-  font-weight: bold;
-}
-
-.calendar-cell.has-events {
-  background-color: #e6f7ff;
-  border-color: #4a90e2;
-}
-
-.calendar-cell:hover {
-  background-color: #f0f8ff;
-  border-color: #4a90e2;
-}
-
-.events {
-  margin-top: 20px;
-}
-
-.events h3 {
-  color: #4a90e2;
-  margin-bottom: 10px;
-}
-
-.events ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.events li {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+/* Layout adjustments */
 .main-content-wrapper {
   display: flex;
   justify-content: center;
@@ -195,6 +134,7 @@ h1 {
   min-height: calc(100vh - 80px); /* adjust if there's a fixed navbar */
   padding-top: 80px; /* if you want spacing below navbar */
 }
+
 .events-container {
   display: flex;
   flex-direction: row;
@@ -202,4 +142,26 @@ h1 {
   gap: 20px;
   width: 100%;
   margin-top: 20px;
+}
+
+/* Image Styles - Fix for disappearing image */
+img {
+  transition: none; /* Prevent any unintended transition effects */
+  visibility: visible; /* Ensure visibility */
+  opacity: 1; /* Make sure it's fully visible */
+  object-fit: contain; /* Ensure image fits within the container */
+}
+
+/* Hover effects on image - Ensure image doesn't disappear */
+img:hover {
+  opacity: 1 !important; /* Ensure no opacity change on hover */
+  visibility: visible !important; /* Ensure no visibility change on hover */
+  transform: scale(1); /* Optional: Prevent scale effect */
+}
+
+/* Ensure images stay visible when touched or focused */
+img:focus, img:active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1); /* Optional */
 }
