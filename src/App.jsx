@@ -34,17 +34,17 @@ function App() {
   const pastEvents = filteredEvents.filter((event) => event.date < today);
   const newEvents = filteredEvents.filter((event) => event.date >= today);
   const handleEventSelect = (event) => {
-    setSelectedEvent(event); // Update selected event when clicked
+    setSelectedEvent(event); 
   };
   const handleScroll = () => {
-    // This function will handle the scroll event to detect which event comes into view
-    const eventElements = document.querySelectorAll(".event-item"); // Assuming events have this class
+    
+    const eventElements = document.querySelectorAll(".event-item"); 
 
     eventElements.forEach((element) => {
       const rect = element.getBoundingClientRect();
       if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        // If the event is visible, set it as selected
-        const eventId = element.getAttribute("data-id"); // Assuming each event has a data-id attribute
+        
+        const eventId = element.getAttribute("data-id"); 
         const event = events.find((event) => event.id === parseInt(eventId));
         setSelectedEvent(event);
       }
@@ -52,9 +52,9 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); // Listen for scroll events
+    window.addEventListener("scroll", handleScroll); 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Clean up the event listener
+      window.removeEventListener("scroll", handleScroll); 
     };
   }, [events]);
 
@@ -98,6 +98,9 @@ function App() {
                             <h2>{selectedEvent.title}</h2>
                             <p>{selectedEvent.description}</p>
                             <p>{selectedEvent.date}</p>
+
+                            <p>{selectedEvent.image}</p>
+
                             <p>{selectedEvent.location}</p>
                             <p>{selectedEvent.culture}</p>
                             <div>
