@@ -103,8 +103,20 @@ function App() {
 
                             <p>{selectedEvent.location}</p>
                             <p>{selectedEvent.culture}</p>
-
-                     
+                            <div>
+                              {selectedEvent.image && (
+                                <img
+                                  src={selectedEvent.image}
+                                  alt={selectedEvent.title}
+                                  style={{
+                                    width: "100%",
+                                    maxWidth: "400px",
+                                    height: "auto",
+                                    marginTop: "10px",
+                                  }}
+                                />
+                              )}
+                            </div>
                           </div>
                         ) : (
                           <div>
