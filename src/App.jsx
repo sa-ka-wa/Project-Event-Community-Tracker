@@ -98,6 +98,7 @@ function App() {
                             <h2>{selectedEvent.title}</h2>
                             <p>{selectedEvent.description}</p>
                             <p>{selectedEvent.date}</p>
+                            <p>{selectedEvent.image}</p>
                             {/* Add more event details here */}
                           </div>
                         ) : (
