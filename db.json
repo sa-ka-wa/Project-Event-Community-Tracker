@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Luo Market Day",
       "date": "2024-12-15T19:00:00",
-      "location": "Muhuri Grounds",
+      
       "description": "Accessing luo cultural items",
       "category": "Culture",
        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFeZI_K1LlC6OeAIdpTIzCxZhXrzBNJqBFOw&s"
@@ -17,12 +17,14 @@
       "description": "Volunteers gathered to clean up our shared community spaces.",
       "category": "Community",
        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPE3lfqrykmOk1h5EIvklqGIQl24RHRrrOQQ&s"
+
     },
     {
       "id": "3",
       "title": "Tech for Teens Workshop",
       "date": "2025-08-02T14:00:00",
       "location": "Library",
+
       "description": "Intro to coding and robotics for young learners.",
       "category": "Education",
      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMmaq9n8d0Temzh5wzWEOJdyIDdMobcID-w&s"
@@ -161,6 +163,15 @@
       "description": "Workshops and networking.",
       "category": "Leadership",
        "image": "https://cdn.create.microsoft.com/catalog-assets/en-us/0001546d-002f-0000-af65-ef928f8b54ed/thumbnails/600/simple-modern-event-poster-green-simple%252C-photographic%252C-informational-1-59ec49e8ac85.webp"
+
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": ""
+
     }
   ]
 }
