@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import AddEvent from "./AddEvent";
+import "./Eventitems.css";
 
 function NewEvents({ events }) {
   const [newEvents, setNewEvents] = useState(events);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const handleAddEvent = (addedEvent) => {
     setNewEvents((prev) => [...prev, addedEvent]); // Add the new event to state
@@ -15,7 +17,7 @@ function NewEvents({ events }) {
       {newEvents.length > 0 ? (
         <ul>
           {newEvents.map((event, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => setSelectedEvent(event)}>
               <strong>{event.title}</strong> - {event.date}
             </li>
           ))}

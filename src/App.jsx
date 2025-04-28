@@ -13,12 +13,16 @@ import ErrorBoundary from "./ADEbuttons/Error.jsx";
 
 function App() {
   const [events, setEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchEvents = async () => {
       const response = await fetch("http://localhost:3000/events");
       const data = await response.json();
       setEvents(data);
+      console.log("Fetched Events:", data); // Debug log
     };
 
     fetchEvents();
@@ -32,6 +36,40 @@ function App() {
   const pastEvents = filteredEvents.filter((event) => event.date < today);
   const newEvents = filteredEvents.filter((event) => event.date >= today);
 
+  const handleEventSelect = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleAddEvent = (newEvent) => {
+    setEvents((prevEvents) => {
+      const updatedEvents = [...prevEvents, newEvent];
+      console.log("Updated Events in App:", updatedEvents); // Debug log
+      return updatedEvents;
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [events, selectedEvent]);
+
+  const handleScroll = () => {
+    const eventElements = document.querySelectorAll(".event-item");
+    eventElements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        const eventId = element.getAttribute("data-id");
+        const event = events.find((event) => event.id === parseInt(eventId));
+
+        if (!selectedEvent || selectedEvent.id !== event.id) {
+          setSelectedEvent(event);
+        }
+      }
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -44,14 +82,60 @@ function App() {
               <>
                 <div className="App">
                   <h1>Event Finder</h1>
-                  <SearchBar
-                    searchTerm={searchTerm}
-                    setSearchTerm={setSearchTerm}
-                  />
-                  <NewEvents events={newEvents} />
-                  <ErrorBoundary>
-                    <PastEvents initialEvents={events} setEvents={setEvents} />
-                  </ErrorBoundary>
+                  <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                  <div className="events-container">
+                    <div className="events-list">
+                      <ErrorBoundary>
+                        <NewEvents
+                          events={newEvents}
+                          setEvents={setEvents}
+                          handleEventSelect={handleEventSelect}
+                          handleAddEvent={handleAddEvent} // Pass handler to NewEvents
+                        />
+                      </ErrorBoundary>
+                      <ErrorBoundary>
+                        <PastEvents
+                          events={pastEvents}
+                          setEvents={setEvents}
+                          handleEventSelect={handleEventSelect}
+                        />
+                      </ErrorBoundary>
+                    </div>
+                    <div className="right-section">
+                      <div className="event-details">
+                        {selectedEvent ? (
+                          <div>
+                            <h2>{selectedEvent.title}</h2>
+                            <p>{selectedEvent.description}</p>
+                            <p>{selectedEvent.date}</p>
+                            <p>{selectedEvent.location}</p>
+                            <p>{selectedEvent.culture}</p>
+                            {selectedEvent.image && (
+                              <img
+                                src={selectedEvent.image}
+                                alt={selectedEvent.title}
+                                style={{
+                                  width: "100%",
+                                  maxWidth: "400px",
+                                  height: "auto",
+                                  marginTop: "10px",
+                                }}
+                              />
+                            )}
+                          </div>
+                        ) : (
+                          <div>
+                            <p>Select an event to see the details</p>
+                            <img
+                              src="src/pages/EVimage/download (1).jpg"
+                              width="500px"
+                              alt="Login visual"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                   <Calendar events={filteredEvents} />
                 </div>
               </>

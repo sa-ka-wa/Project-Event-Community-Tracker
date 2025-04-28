@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import EventItem from "../ADEbuttons/Evenitems";
 import { editEvent, deleteEvent } from "../utils/eventService";
+import "../ADEbuttons/Eventitems.css";
 
-function PastEvents({ initialEvents, setEvents }) {
-  const [events, setLocalEvents] = useState(initialEvents);
+function PastEvents({ events, setEvents, handleEventSelect }) {
+  const [localEvents, setLocalEvents] = useState(events);
 
   useEffect(() => {
-    setLocalEvents(initialEvents);
-  }, [initialEvents]);
+    setLocalEvents(events);
+  }, [events]);
 
   const handleDeleteEvent = (deletedEventId) => {
     deleteEvent(deletedEventId);
@@ -24,19 +25,22 @@ function PastEvents({ initialEvents, setEvents }) {
       )
     );
   };
+
   return (
     <div className="past-events">
       <h2>Past Events</h2>
-      {events.length > 0 ? (
+      {localEvents.length > 0 ? (
         <ul>
-          {events.map((event, index) => (
-            <li key={event.id}>
+          {localEvents.map((event) => (
+            <li key={event.id} onClick={() => handleEventSelect(event)}>
               <strong>{event.title}</strong> - {event.date}
               <EventItem
                 event={event}
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
+              
+              
             </li>
           ))}
         </ul>
