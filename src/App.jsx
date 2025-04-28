@@ -47,7 +47,11 @@ function App() {
       if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
         const eventId = element.getAttribute("data-id");
         const event = events.find((event) => event.id === parseInt(eventId));
-        setSelectedEvent(event);
+
+        // Only update selectedEvent if it's not already selected
+        if (!selectedEvent || selectedEvent.id !== event.id) {
+          setSelectedEvent(event);
+        }
       }
     });
   };
@@ -57,7 +61,7 @@ function App() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [events]);
+  }, [events, selectedEvent]);
 
   return (
     <>

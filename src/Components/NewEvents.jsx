@@ -34,12 +34,7 @@ function NewEvents({ events, setEvents, handleEventSelect }) {
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
-              {/* Image Rendering */}
-              <img
-                src={event.image || "/path/to/fallback-image.jpg"}
-                alt={event.title}
-                style={{ width: "150px", height: "auto", marginTop: "10px" }}
-              />
+              
             </li>
           ))}
         </ul>

@@ -39,14 +39,8 @@ function PastEvents({ events, setEvents, handleEventSelect }) {
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
-              {/* Render image for past events */}
-              {event.image && (
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  style={{ width: "150px", height: "auto", marginTop: "10px" }}
-                />
-              )}
+              
+              
             </li>
           ))}
         </ul>
