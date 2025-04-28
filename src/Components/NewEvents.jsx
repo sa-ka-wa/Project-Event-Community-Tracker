@@ -104,13 +104,6 @@ function NewEvents({ events, setEvents, handleEventSelect, handleAddEvent }) {
         <div>
           <label>Event Image:</label>
           <input type="file" onChange={handleImageChange} />
-          {image && (
-            <img
-              src={image}
-              alt="Event Preview"
-              style={{ width: "100px", marginTop: "10px" }}
-            />
-          )}
         </div>
         <button type="submit">Add Event</button>
       </form>
@@ -125,13 +118,7 @@ function NewEvents({ events, setEvents, handleEventSelect, handleAddEvent }) {
                 onDeleteEvent={handleDeleteEvent}
                 onEditEvent={handleEditEvent}
               />
-              {event.image && (
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  style={{ width: "150px", height: "auto", marginTop: "10px" }}
-                />
-              )}
+              
             </li>
           ))}
         </ul>
