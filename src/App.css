@@ -6,37 +6,49 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin-top: 80px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f8fc; /* Light background for the body */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .App {
   text-align: center;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 h1 {
-  color: #4a90e2;
+  color: #1e3d58; /* Dark blue */
   margin-bottom: 20px;
 }
 
 /* Styles for the NewEvents component */
 .new-events {
-  background-color: #ffffff;
+  background-color: #ffffff; /* White background for event form */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
   max-width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: scale(0.9); /* Reduce size for one-page effect */
+}
+
+.new-events:hover {
+  transform: scale(1); /* Expand back on hover */
 }
 
 .new-events h2 {
-  color: #4a90e2;
+  color: #1e3d58; /* Dark blue */
   margin-bottom: 10px;
 }
 
 .new-events p {
   font-size: 16px;
   line-height: 1.5;
+  color: #333; /* Dark gray text for better readability */
 }
 
 /* Event Details Image */
@@ -63,14 +75,33 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+  transform: scale(0.9); /* Reduce calendar size */
+  transition: transform 0.3s ease;
 }
 
-.calendar-navigation {
-  margin: 10px 0;
+.calendar:hover {
+  transform: scale(1); /* Expand calendar back on hover */
 }
 
 .calendar-navigation button {
   margin: 0 5px;
+  padding: 10px 15px;
+  background-color: #1e3d58; /* Dark blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-navigation button:hover {
+  background-color: #0d2b3a; /* Darker blue */
 }
 
 .calendar-grid {
@@ -90,6 +121,7 @@ h1 {
 
 .calendar-cell.header {
   font-weight: bold;
+  color: #1e3d58; /* Dark blue */
 }
 
 .calendar-cell.empty {
@@ -97,51 +129,28 @@ h1 {
 }
 
 .calendar-cell.selected {
-  background-color: #a1c4fd;
+  background-color: #a1c4fd; /* Light blue */
 }
 
 .calendar-cell.has-events {
-  background-color: #ffd700;
+  background-color: #ffd700; /* Yellow */
 }
 
-.events {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.events h3 {
-  color: #4a90e2;
-}
-
-.events ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.events li {
-  background-color: #f9f9f9;
+/* Styles for PastEvents */
+.past-events {
+  background-color: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9); /* Reduce size for past events section */
+  transition: transform 0.3s ease;
 }
 
-/* Layout adjustments */
-.main-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 80px); /* adjust if there's a fixed navbar */
-  padding-top: 80px; /* if you want spacing below navbar */
-}
-
-.events-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  margin-top: 20px;
+.past-events:hover {
+  transform: scale(1); /* Expand back on hover */
 }
 
 /* Image Styles - Fix for disappearing image */
@@ -164,4 +173,76 @@ img:focus, img:active {
   opacity: 1 !important;
   visibility: visible !important;
   transform: scale(1); /* Optional */
+}
+
+/* Button Styles */
+button {
+  background-color: #1e3d58; /* Dark blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d2b3a; /* Darker blue */
+}
+
+/* Form Elements */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #1e3d58; /* Dark blue border on focus */
+  outline: none;
+}
+
+/* Event Form Image Preview */
+.image-preview img {
+  max-width: 100px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .new-events, .calendar, .past-events {
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .new-events h2, .calendar h2, .past-events h2 {
+    font-size: 1.5rem;
+  }
+
+  .new-events form input,
+  .new-events form textarea {
+    font-size: 0.9rem;
+  }
+
+  .new-events form button {
+    padding: 8px 15px;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(5, 1fr); /* Reduce number of columns for smaller screens */
+  }
+
+  .events-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
 }

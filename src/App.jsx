@@ -22,6 +22,7 @@ function App() {
       const response = await fetch("http://localhost:3000/events");
       const data = await response.json();
       setEvents(data);
+      console.log("Fetched Events:", data); // Debug log
     };
 
     fetchEvents();
@@ -36,23 +37,14 @@ function App() {
   const newEvents = filteredEvents.filter((event) => event.date >= today);
 
   const handleEventSelect = (event) => {
-    setSelectedEvent(event); // Update selectedEvent state when event is clicked
+    setSelectedEvent(event);
   };
 
-  const handleScroll = () => {
-    const eventElements = document.querySelectorAll(".event-item");
-
-    eventElements.forEach((element) => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        const eventId = element.getAttribute("data-id");
-        const event = events.find((event) => event.id === parseInt(eventId));
-
-        // Only update selectedEvent if it's not already selected
-        if (!selectedEvent || selectedEvent.id !== event.id) {
-          setSelectedEvent(event);
-        }
-      }
+  const handleAddEvent = (newEvent) => {
+    setEvents((prevEvents) => {
+      const updatedEvents = [...prevEvents, newEvent];
+      console.log("Updated Events in App:", updatedEvents); // Debug log
+      return updatedEvents;
     });
   };
 
@@ -62,6 +54,21 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [events, selectedEvent]);
+
+  const handleScroll = () => {
+    const eventElements = document.querySelectorAll(".event-item");
+    eventElements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        const eventId = element.getAttribute("data-id");
+        const event = events.find((event) => event.id === parseInt(eventId));
+
+        if (!selectedEvent || selectedEvent.id !== event.id) {
+          setSelectedEvent(event);
+        }
+      }
+    });
+  };
 
   return (
     <>
@@ -82,14 +89,15 @@ function App() {
                         <NewEvents
                           events={newEvents}
                           setEvents={setEvents}
-                          handleEventSelect={handleEventSelect} // Pass the handler for new events
+                          handleEventSelect={handleEventSelect}
+                          handleAddEvent={handleAddEvent} // Pass handler to NewEvents
                         />
                       </ErrorBoundary>
                       <ErrorBoundary>
                         <PastEvents
                           events={pastEvents}
                           setEvents={setEvents}
-                          handleEventSelect={handleEventSelect} // Pass the handler for past events
+                          handleEventSelect={handleEventSelect}
                         />
                       </ErrorBoundary>
                     </div>
@@ -100,24 +108,20 @@ function App() {
                             <h2>{selectedEvent.title}</h2>
                             <p>{selectedEvent.description}</p>
                             <p>{selectedEvent.date}</p>
-
                             <p>{selectedEvent.location}</p>
                             <p>{selectedEvent.culture}</p>
-                            <div>
-                              {selectedEvent.image && (
-                                <img
-                                  src={selectedEvent.image}
-                                  alt={selectedEvent.title}
-                                  style={{
-                                    width: "100%",
-                                    maxWidth: "400px",
-                                    height: "auto",
-                                    marginTop: "10px",
-                                  }}
-                                />
-                              )}
-                            </div>
-
+                            {selectedEvent.image && (
+                              <img
+                                src={selectedEvent.image}
+                                alt={selectedEvent.title}
+                                style={{
+                                  width: "100%",
+                                  maxWidth: "400px",
+                                  height: "auto",
+                                  marginTop: "10px",
+                                }}
+                              />
+                            )}
                           </div>
                         ) : (
                           <div>
