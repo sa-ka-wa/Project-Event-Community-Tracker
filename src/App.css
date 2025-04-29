@@ -6,7 +6,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin-top: 80px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f7f8fc; /* Light background for the body */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -76,12 +76,12 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 8px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  max-width: 600px;
+  width: 60vw;
   transform: scale(0.9); /* Reduce calendar size */
   transition: transform 0.3s ease;
 }
@@ -169,7 +169,8 @@ img:hover {
 }
 
 /* Ensure images stay visible when touched or focused */
-img:focus, img:active {
+img:focus,
+img:active {
   opacity: 1 !important;
   visibility: visible !important;
   transform: scale(1); /* Optional */
@@ -191,7 +192,8 @@ button:hover {
 }
 
 /* Form Elements */
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -205,7 +207,8 @@ input[type="file"] {
   font-size: 1rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: #1e3d58; /* Dark blue border on focus */
   outline: none;
 }
@@ -219,13 +222,17 @@ input:focus, textarea:focus {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .new-events, .calendar, .past-events {
+  .new-events,
+  .calendar,
+  .past-events {
     max-width: 100%;
     margin: 10px;
     padding: 15px;
   }
 
-  .new-events h2, .calendar h2, .past-events h2 {
+  .new-events h2,
+  .calendar h2,
+  .past-events h2 {
     font-size: 1.5rem;
   }
 
@@ -239,10 +246,26 @@ input:focus, textarea:focus {
   }
 
   .calendar-grid {
-    grid-template-columns: repeat(5, 1fr); /* Reduce number of columns for smaller screens */
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* Reduce number of columns for smaller screens */
   }
 
   .events-container {
     flex-direction: column; /* Stack elements vertically on smaller screens */
   }
+}
+.right-section {
+  width: 50%;
+  position: sticky;
+  top: 200px; /* Distance from the top before it starts sticking */
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
