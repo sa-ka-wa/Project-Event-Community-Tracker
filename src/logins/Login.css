@@ -1,100 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #f08ca1, #000, #00c6ff, #ff9e2a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  overflow-y: scroll; /* Enable scrolling */
+}
+
+/* Animation for moving gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- General containers --- */
+.add-event,
+.new-events,
+.past-events,
+.event-item-container {
+  background-color: transparent; /* Set background to transparent */
+  border-radius: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+.new-events {
+  width: 100vw;
+}
+
+/* --- Auth Form Container --- */
 .auth-form-container {
-    background-color: #ffffff;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: transparent; /* Set to transparent */
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(45deg, #f08ca1, #000, #00c6ff, #ff9e2a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite; /* Apply same background animation */
+}
+
+/* --- Titles --- */
+.add-event h2,
+.new-events h2,
+.auth-form-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff; /* Ensure the title is visible against the gradient */
+}
+
+/* --- Forms --- */
+.add-event form,
+.event-form,
+.auth-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-event input,
+.event-input,
+.auth-form-container input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #222;
+  color: #eee;
+}
+
+.add-event input::placeholder,
+.event-input::placeholder,
+.auth-form-container input::placeholder {
+  color: #aaa;
+}
+
+.add-event button,
+.event-button,
+.auth-form-container .btn-primary {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-event button:hover,
+.event-button:hover,
+.auth-form-container .btn-primary:hover {
+  background-color: #555;
+}
+
+/* --- Auth Form Inputs --- */
+.auth-form-container .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.auth-form-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.auth-form-container .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form-container .form-group input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* --- Error Message --- */
+.error-message {
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* --- Auth Links --- */
+.auth-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  margin-left: 5px;
+  text-decoration: underline;
+  font-size: 0.95em;
+}
+
+.link-button:hover {
+  color: #357ABD;
+  text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .add-event,
+  .new-events,
+  .event-item-container,
+  .auth-form-container {
+    padding: 20px;
   }
-  
-  .auth-form-container h2 {
-    margin-bottom: 25px;
-    color: #4a90e2;
-    font-weight: 600;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #555;
-  }
-  
-  .form-group input {
+
+  .event-image,
+  .event-placeholder,
+  .auth-form-container .form-group input {
     width: 100%;
-    padding: 10px 12px;
-    border: 1.5px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
+    height: 150px;
   }
-  
-  .form-group input:focus {
-    border-color: #4a90e2;
-    outline: none;
+
+  .auth-form-container {
+    max-width: 90%;
   }
-  
-  .btn-primary {
-    width: 100%;
-    background-color: #4a90e2;
-    color: white;
-    padding: 12px 0;
-    font-size: 1.1em;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-primary:hover:not(:disabled) {
-    background-color: #357ABD;
-  }
-  
-  .btn-primary:disabled {
-    background-color: #a0b9e8;
-    cursor: not-allowed;
-  }
-  
-  .error-message {
-    background-color: #ffdddd;
-    color: #d8000c;
-    border: 1px solid #d8000c;
-    padding: 10px 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-align: center;
-  }
-  
-  .auth-links {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0.95em;
-    color: #555;
-  }
-  
-  .link-button {
-    background: none;
-    border: none;
-    color: #4a90e2;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0;
-    margin-left: 5px;
-    text-decoration: underline;
-    font-size: 0.95em;
-  }
-  
-  .link-button:hover {
-    color: #357ABD;
-    text-decoration: none;
-  }
-  
+}

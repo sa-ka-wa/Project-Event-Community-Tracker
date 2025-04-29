@@ -4,16 +4,34 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #f08ca1, #000);
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #f08ca1, #000, #00c6ff, #ff9e2a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  overflow-y: scroll; /* Enable scrolling */
+}
+
+/* Animation for moving gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* --- General containers --- */
 .add-event,
 .new-events,
+.past-events,
 .event-item-container {
-  background-color: #111;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 30px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   padding: 30px;
@@ -24,6 +42,7 @@ body {
   margin-right: auto;
   color: #fff;
 }
+
 .new-events {
   width: 100vw;
 }
@@ -159,6 +178,7 @@ body {
     height: 150px;
   }
 }
+
 /* --- Scrollable Event Lists --- */
 .new-events ul,
 .past-events ul {
@@ -196,11 +216,12 @@ body {
   margin-bottom: 10px;
   font-size: 18px;
 }
+
 .new-events {
   width: 40vw;
   max-width: none;
   margin: 0;
-  background-color: #111;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 30px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   padding: 30px 40px; /* 30px top/bottom, 40px left/right */
@@ -209,8 +230,9 @@ body {
   flex-direction: column;
   align-items: flex-start; /* align everything to the left */
 }
+
 .add-event {
-  background-color: #111;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   padding: 30px 40px;
@@ -289,11 +311,12 @@ body {
     width: 100%;
   }
 }
+
 .past-events {
   width: 40vw;
   max-width: none;
   margin: 0;
-  background-color: #111;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 30px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   padding: 30px 40px; /* 30px top/bottom, 40px left/right */
@@ -302,20 +325,7 @@ body {
   flex-direction: column;
   align-items: flex-start; /* align everything to the left */
 }
-.add-event {
-  background-color: #111;
-  border-radius: 30px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  padding: 20px 30px; /* smaller padding to make it thinner */
-  margin-bottom: 30px;
-  width: 60vh; /* same width as new-events and past-events */
-  max-width: none; /* remove max-width limit */
-  margin: 0; /* no side margin */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* align everything to the left */
-}
+
 .events-container {
   display: flex;
   flex-direction: row;
@@ -324,6 +334,7 @@ body {
   width: 100%;
   margin-top: 20px;
 }
+
 .left-section {
   display: flex;
   flex-direction: column;
@@ -335,7 +346,7 @@ body {
   flex-direction: column;
   gap: 20px; /* Space between the components within this section */
 
-  background-color: #111;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 30px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   padding: 30px 40px;
